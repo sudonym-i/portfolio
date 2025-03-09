@@ -21,6 +21,38 @@
     
     <a href="../index.html" class="go-back-nav">Go back</a>
     <br>
+
+
+    <h1><span >SUDOKU</span></h1>
     <img id="resume" src="images/sudoku.png">
+    <br> <br>
+ 
+        <span class="case-study-text" style="font-size: larger;">
+            Building a Sudoku game from scratch using just HTML, CSS, and JavaScript was an incredibly rewarding and challenging experience. I started with the fundamental goal of creating a clean, interactive game that could both generate random puzzles and allow users to input their own answers. This project not only tested my technical skills but also helped me improve my problem-solving abilities and attention to detail.
+<br> <br>
+<h2> HTML Structure </h2>
+The first step was designing the game layout using HTML. I created a 9x9 grid using a combination of `<div>` elements, where each cell would hold either a number or be left empty for user input. Each cell was individually clickable to allow for interaction, and I used HTML’s `input` fields to capture the numbers users entered. This allowed me to create the board structure and set the foundation for the game mechanics.
+<br> <br>
+<h2> CSS Styling </h2>
+Next, I moved on to the visual design, using CSS to give the game board a clean, minimalist look. I used Flexbox to align the rows and columns properly, ensuring that the grid would maintain its shape even when resizing the window. The borders between cells were carefully styled to visually distinguish the 3x3 subgrids, giving the board its iconic Sudoku layout. I also added hover effects to indicate which cell was being selected and applied different styles for numbers entered by the user versus the ones that were part of the puzzle's initial state.
+<br> <br>
+<h2> JavaScript Logic </h2>
+The most intricate part of the project was implementing the game logic with JavaScript. I needed to:
+<br> <br>
+1. **Generate Random Sudoku Puzzles**: I created a random puzzle generator using an algorithm that would ensure the puzzle had a unique solution. This was crucial to ensure that the puzzles were solvable and provided a challenge to players.
+  <br> <br>
+2. **User Input Validation**: I built a validation function that would check whether the user’s input was correct based on Sudoku rules (no repeating numbers in any row, column, or 3x3 subgrid). This was one of the more complex parts of the project since it required checking all three constraints for each number entered.
+<br> <br>
+3. **Check Puzzle Solving**: I also implemented a function to check if the user had solved the puzzle correctly. If all constraints were met and the board was filled, the game would notify the user of their success.
+<br> <br>
+4. **Backtracking Algorithm**: For solving the puzzle, I implemented a backtracking algorithm. While this was an optional feature, it added significant complexity to the project and allowed the game to not only generate random puzzles but also solve any given Sudoku grid.
+<br> <br>
+<h2> Challenges </h2>
+One of the biggest challenges I faced was ensuring the user’s input was validated correctly and efficiently. For example, handling edge cases like entering invalid characters or not filling in all the empty cells before checking the solution required careful logic. Additionally, managing the state of the board while providing real-time feedback (like highlighting incorrect numbers) was a tricky task, but one that greatly improved the user experience.
+<br> <br>
+<h2> Final Thoughts </h2>
+The project gave me an immense sense of accomplishment, and I learned a great deal in the process, especially about using JavaScript for game logic and managing dynamic content with HTML and CSS. While the game itself is relatively simple, building it entirely from scratch gave me a deep understanding of how games are structured and how to balance both the user interface and logic to create a functional and enjoyable experience.
+        </span>
+
 </body>
 </html>

@@ -4,6 +4,13 @@
     margin-bottom: 1em;
 }
 
+.section{
+    border-radius: 20px;
+    box-shadow: 0 0 .75rem #000000e7;
+    padding: 1.2em;
+    margin: 3em;
+}
+
 h1 {
     color: white;
     margin-top: 1em;

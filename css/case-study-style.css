@@ -5,10 +5,11 @@
 }
 
 .section{
-    border-radius: 20px;
-    box-shadow: 0 0 .75rem #000000e7;
+    border-radius: 10px;
+    box-shadow: 0 0 .75rem #8f8f8fe7;
     padding: 1.2em;
-    margin: 3em;
+    margin: 1vw;
+    margin-top: 3em;
 }
 
 h1 {

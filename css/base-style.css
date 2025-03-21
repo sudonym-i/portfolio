@@ -9,7 +9,7 @@ body {
 
 #Profile{
     border-radius: 10px;
-    width: 15em;
+    width: 11em;
 }
 
 .main-container {
@@ -48,11 +48,14 @@ img {
 }
 
 .introduction-heading{
+    flex: auto;
+    justify-content: center;
+    align-items: center;
     color: white;
     font-size: 2em;
     font-weight: 700;
     margin-bottom: 0.8em;
-    margin-top: 7em;
+    margin-top: 7vw;
 }
 
 .introduction-text {

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../css/base-style.css">
-    <link rel="stylesheet" href="../css/case-study-style.css">
+    <link rel="stylesheet" href="../css/sub-sections-style.css">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio | Projects</title>
@@ -23,11 +23,67 @@
     <br>
 
 
+    <h1><span >Web Crawler</span></h1>
+    <img id="resume" src="images/crawler.png">
+    <br> <br>
+ 
+        <span class="sub-sections-text" style="font-size: larger;">
+            <h1>Overview</h1>
+            This C++ project implements a web crawler designed to navigate through a series of web pages, following a chain of links specified in a crawlchain.txt file. The crawler efficiently collects specific data from each page by identifying and extracting content between predefined start and stop points. The start and stop points are denoted by HTML tags such as  &lt;a&gt; and  &lt;/a&gt;, allowing the crawler to scrape relevant data for analysis or further processing.
+<br>
+<h2>Key Features</h2>
+Crawl Chain Specification:
+
+The project reads a crawlchain.txt file, which contains a list of URLs to visit and tags (or keywords) to look for. This crawl chain guides the crawler through different web pages, allowing for controlled navigation. The crawler follows the links sequentially, ensuring that each URL is visited in the specified order.
+
+<h2>Data Collection Between Tags:</h2>
+
+The core functionality of the crawler revolves around identifying specific HTML tags, typically &lt;a&gt; (anchor tags) and &lt;/a&gt; (closing anchor tags), to extract relevant content. This allows for a targeted approach to data collection, such as gathering links or any other content contained within specific tags.
+
+The crawler extracts the content between the start and stop tags and stores the results for further processing.
+
+<h2>HTML Parsing:</h2>
+
+The crawler employs basic HTML parsing techniques to traverse the structure of each web page. It identifies the start and stop points, ensuring that only the relevant sections of the HTML document are captured.
+
+This parsing method is simple yet effective for specific scraping tasks and provides a foundation for more complex data extraction.
+
+<h2>Error Handling and Robustness:</h2>
+
+The project is designed with error handling mechanisms to gracefully handle issues such as broken links, invalid URLs, or missing tags. If the crawler encounters a problem, it logs the error and continues processing the next URL in the crawl chain.
+
+<h2>Extensibility:</h2>
+
+The C++ web crawler is modular, allowing for easy expansion and customization. For example, users can add more tag-based data extraction methods, implement deeper link-following mechanisms, or extend the crawler to handle different types of data (e.g., images, metadata, etc.).
+
+Performance Considerations:</h2>
+
+C++ is chosen for its high performance and control over system resources, which is crucial for efficiently crawling multiple web pages. The project optimizes both memory usage and speed, making it capable of handling large-scale data collection tasks.
+
+<h2>How It Works</h2>
+<h2>Input:</h2>
+
+The user provides a crawlchain.txt file containing a sequence of URLs and tags/keywords. These URLs specify the order in which the crawler should visit different web pages. There is a little bit of syntax to it, but not much.
+
+<h2>Execution:</h2>
+
+The program initializes by reading the crawlchain.txt file, then begins processing each URL one by one.
+
+For each URL, the crawler fetches the HTML content of the page.
+
+It then scans the HTML content for the specified start and stop tags (such as <a> and </a>) and extracts the content between them.
+
+<h2>Data Output:</h2> 
+
+The extracted data is stored, either in memory or written to an output file, such as a CSV or text file, for further analysis or reporting.
+            </span>
+<br><br><br>
+
     <h1><span >SUDOKU</span></h1>
     <img id="resume" src="images/sudoku.png">
     <br> <br>
  
-        <span class="case-study-text" style="font-size: larger;"> <br>
+        <span class="sub-sections-text" style="font-size: larger;"> <br>
              <a style="text-decoration: underline;" href="https://sudonym-i.github.io/Sudoku/">Link to Project HERE</a> <br> <br> 
         This was one of my first projects. Building a Sudoku game from scratch using just HTML and JavaScript was an incredibly rewarding and challenging experience. I started with the fundamental goal of creating a clean, interactive game that could both generate random puzzles and allow users to input their own answers. This project not only tested my technical skills but also helped me improve my problem-solving abilities and attention to detail.
 <br> <br>
@@ -58,7 +114,7 @@ The project gave me an immense sense of accomplishment, and I learned a great de
     <img id="resume" src="images/encryption.png">
     <br> <br>
  
-        <span class="case-study-text" style="font-size: larger;">
+        <span class="sub-sections-text" style="font-size: larger;">
             <h2>My Experience Creating a Simple Encryption Algorithm in Python<br></h2>
             In my recent project, I set out to create a simple yet effective encryption algorithm using Python. My main goal was to develop an encryption method that could transform text in a unique, non-repetitive way using an iterative series. The concept behind the algorithm was to apply a series of transformations to each character in a message, where each iteration would change the pattern of encryption for the next character, ensuring no repetitions in the encryption.
             <br><br>

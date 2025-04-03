@@ -9,7 +9,6 @@ body {
 
 #Profile{
     border-radius: 10px;
-    width: 11em;
 }
 
 .main-container {
@@ -19,7 +18,7 @@ body {
 
 img {
     border-radius:8px;
-    max-width: 90%;
+    max-width: 100%;
 }
 
 
@@ -61,11 +60,12 @@ img {
 .introduction-text {
     color: white;
     font-size: 1.2em;
-    margin-bottom: 2em;
+    margin-bottom: 8em;
 }
 
 .left-section {
     border-radius: 20px;
+    margin-right: 10vw;
 }
 
 .sub-sections-heading {

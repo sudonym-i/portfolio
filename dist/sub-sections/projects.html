@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/portfolio.d8becb29.css">
+    <link rel="stylesheet" href="/projects.d9892134.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Projects</title>
+    
+</head>
+<style>#titleimg {
+  size: 100%;
+}
+</style>
+<body>
+    
+    <a href="/index.html" class="go-back-nav">Go back</a>
+    <br>
+
+
+    <h1><span>Web Crawler</span></h1>
+    <img id="titleimg" src="/crawler.ea64deba.png">
+    <br>
+ 
+        <span class="sub-sections-text" style="font-size: larger">
+            <h2>Overview</h2>
+            This C++ project implements a web crawler designed to navigate through a series of web pages, following a chain of links specified in a crawlchain.txt file. The crawler efficiently collects specific data from each page by identifying and extracting content between predefined start and stop points. The start and stop points are denoted by HTML tags such as  &lt;a&gt; and  &lt;/a&gt;, allowing the crawler to scrape relevant data for analysis or further processing.
+<br>
+<h2>Key Features</h2>
+Crawl Chain Specification:
+
+The project reads a crawlchain.txt file, which contains a list of URLs to visit and tags (or keywords) to look for. This crawl chain guides the crawler through different web pages, allowing for controlled navigation. The crawler follows the links sequentially, ensuring that each URL is visited in the specified order.
+
+<h2>Data Collection Between Tags:</h2>
+
+The core functionality of the crawler revolves around identifying specific HTML tags, typically &lt;a&gt; (anchor tags) and &lt;/a&gt; (closing anchor tags), to extract relevant content. This allows for a targeted approach to data collection, such as gathering links or any other content contained within specific tags.
+
+The crawler extracts the content between the start and stop tags and stores the results for further processing.
+
+<h2>HTML Parsing:</h2>
+
+The crawler employs basic HTML parsing techniques to traverse the structure of each web page. It identifies the start and stop points, ensuring that only the relevant sections of the HTML document are captured.
+
+This parsing method is simple yet effective for specific scraping tasks and provides a foundation for more complex data extraction.
+
+<h2>Error Handling and Robustness:</h2>
+
+The project is designed with error handling mechanisms to gracefully handle issues such as broken links, invalid URLs, or missing tags. If the crawler encounters a problem, it logs the error and continues processing the next URL in the crawl chain.
+
+<h2>Extensibility:</h2>
+
+The C++ web crawler is modular, allowing for easy expansion and customization. For example, users can add more tag-based data extraction methods, implement deeper link-following mechanisms, or extend the crawler to handle different types of data (e.g., images, metadata, etc.).
+
+Performance Considerations:
+
+C++ is chosen for its high performance and control over system resources, which is crucial for efficiently crawling multiple web pages. The project optimizes both memory usage and speed, making it capable of handling large-scale data collection tasks.
+
+<h2>How It Works</h2>
+<span style="text-indent: 20px">
+<h2 style="text-decoration: underline">Input:</h2>
+
+The user provides a crawlchain.txt file containing a sequence of URLs and tags/keywords. These URLs specify the order in which the crawler should visit different web pages. There is a little bit of syntax to it, but not much.
+
+<h2 style="text-decoration: underline">Execution:</h2>
+
+The program initializes by reading the crawlchain.txt file, then begins processing each URL one by one.
+
+For each URL, the crawler fetches the HTML content of the page.
+
+It then scans the HTML content for the specified start and stop tags (such as <a> and </a>) and extracts the content between them.
+
+<h2 style="text-decoration: underline">Data Output:</h2> 
+
+The extracted data is stored, either in memory or written to an output file, such as a CSV or text file, for further analysis or reporting.
+</span></span>
+<br><br><br>
+    <h1><span>SUDOKU</span></h1>
+    <img id="titleimg" src="/sudoku.64ffd0c2.png">
+        <span class="sub-sections-text" style="font-size: larger"> 
+            <h2> Overview </h2>
+        This was one of my first projects. Building a Sudoku game from scratch using just HTML and JavaScript was an incredibly rewarding and challenging experience. I started with the fundamental goal of creating a clean, interactive game that could both generate random puzzles and allow users to input their own answers. This project not only tested my technical skills but also helped me improve my problem-solving abilities and attention to detail.
+<br> <br>
+<h2> HTML Structure </h2>
+The first step was designing the game layout using HTML. I created a 9x9 grid using a combination of `<div>` elements, where each cell would hold either a number or be left empty for user input. Each cell was individually clickable to allow for interaction, and I used HTML’s `input` fields to capture the numbers users entered. This allowed me to create the board structure and set the foundation for the game mechanics.
+<br> <br>
+
+<h2> JavaScript Logic </h2>
+The most intricate part of the project was implementing the game logic with JavaScript. I needed to:
+<br> <br>
+1. **Generate Random Sudoku Puzzles**: I created a random puzzle generator using an algorithm that would ensure the puzzle had a unique solution. This was crucial to ensure that the puzzles were solvable and provided a challenge to players.
+  <br> <br>
+2. **User Input Validation**: I built a validation function that would check whether the user’s input was correct based on Sudoku rules (no repeating numbers in any row, column, or 3x3 subgrid). This was one of the more complex parts of the project since it required checking all three constraints for each number entered.
+<br> <br>
+3. **Check Puzzle Solving**: I also implemented a function to check if the user had solved the puzzle correctly. If all constraints were met and the board was filled, the game would notify the user of their success.
+<br> <br>
+4. **Backtracking Algorithm**: For solving the puzzle, I implemented a backtracking algorithm. While this was an optional feature, it added significant complexity to the project and allowed the game to not only generate random puzzles but also solve any given Sudoku grid.
+<br> <br>
+<h2> Challenges </h2>
+One of the biggest challenges I faced was ensuring the user’s input was validated correctly and efficiently. For example, handling edge cases like entering invalid characters or not filling in all the empty cells before checking the solution required careful logic. Additionally, managing the state of the board while providing real-time feedback (like highlighting incorrect numbers) was a tricky task, but one that greatly improved the user experience.
+<br> <br>
+<h2> Final Thoughts </h2>
+The project gave me an immense sense of accomplishment, and I learned a great deal in the process, especially about using JavaScript for game logic and managing dynamic content with HTML and CSS. While the game itself is relatively simple, building it entirely from scratch gave me a deep understanding of how games are structured and how to balance both the user interface and logic to create a functional and enjoyable experience.
+        </div></span>
+
+    <br><br><br>
+    <h1><span>Cypher-space</span></h1>
+    <img id="titleimg" src="/encryption.7bb9bdd3.png">
+    <br> <br>
+ 
+        <span class="sub-sections-text" style="font-size: larger">
+            <h2>My Experience Creating an iterative Encryption Algorithm from scratch in Python<br></h2>
+            In my recent project, I set out to create an encryption algorithm from scratch using Python. My main goal was to develop an encryption method that could transform text in a unique, non-repetitive way using an iterative series. The concept behind the algorithm was to apply a series of transformations to each character in a message, where each iteration would change the pattern of encryption for the next character, ensuring no repetitions in the encryption.
+            <br><br>
+            <h2>Designing the Algorithm<br></h2>
+            I began by brainstorming how I wanted to structure the encryption process. My main idea was to avoid the predictability found in traditional encryption methods like Caesar cipher, which shifts characters by a fixed number. I wanted my algorithm to use an iterative approach that altered the encryption for each character based on previous ones.
+            <br>
+            The design concept involved using an iterative series of operations. For example, each character in the string would be processed using a combination of operations: shifting characters by varying amounts, changing their positions, and applying simple mathematical transformations like addition or subtraction of numbers derived from the character’s index. Each of these transformations would depend on a previously computed value, creating a cascading effect where the encryption evolves as the algorithm progresses.
+            <br><br>
+            <h2>Coding the Algorithm<br></h2>
+            Once I had the general idea, I began coding the algorithm in Python. The basic steps were:
+            <br>
+            Initial Setup: I decided that the algorithm should start with a secret key (a number or string) that would influence the transformation of the first character. This key would then be iterated on for each subsequent character, ensuring no repetitive transformations across the text.
+            <br>
+            Iterative Transformation: For each character in the input string, I created a function that would apply the transformation based on the iteration number. For instance:
+            <br><br>
+            <h2>The first character would have a specific shift based on the key.<br></h2>
+            The second character’s transformation would depend on the result of the first one, and so on. This allowed me to create a series of transformations that were tightly coupled to the evolving pattern.
+            Character Encoding: I used Python's built-in ord() and chr() functions to convert characters to their ASCII values, perform the encryption calculations, and then convert them back into characters. This enabled me to easily manipulate the characters and apply mathematical transformations.
+            <br><br>
+            Decryption: I also built in a method for decryption, which would reverse the iterative transformations by applying the inverse of each operation used in the encryption.
+            <br>
+            <h2>Challenges Faced<br></h2>
+            One of the challenges I encountered was ensuring that the series of transformations was both secure enough to prevent easy decryption, while still being efficient. I had to carefully balance the complexity of the transformations and the iterative nature of the algorithm so that the encrypted message wouldn’t become too difficult to manage.
+            <br>
+            I also had to ensure that the key used in the algorithm wasn’t too simple, as that would defeat the purpose of creating a non-repetitive encryption scheme. I ended up using a combination of a numeric key and the length of the input string to generate a series of shifts for each character.
+            <br>
+            Another challenge was testing the algorithm. Ensuring that the iterative transformations worked as expected for different input strings took a fair amount of trial and error. Some edge cases required additional checks to avoid errors such as attempting to shift a character beyond the ASCII range.
+            <br><br>
+            <h2>Final Outcome<br></h2>
+            In the end, I was able to create a functional encryption algorithm that was both simple and unique. The algorithm successfully encrypts text using an iterative series of transformations that ensures no repetitive patterns in the encryption process. The result is an encrypted string that appears random and secure, yet can be decrypted with the correct key.
+            <br>
+            I was pleased with how well the algorithm worked, especially given the fact that it was designed to be both easy to implement and somewhat effective at hiding the original message. While this encryption method is certainly not suitable for high-security applications, it provided valuable insights into how iterative transformations can create non-repetitive encryption schemes.
+
+            </span>
+
+<script src="/projects.217ee45c.js"></script></body>
+</html>

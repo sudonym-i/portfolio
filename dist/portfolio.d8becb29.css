@@ -1,0 +1,144 @@
+body {
+  background-color: #2c2c2c;
+  margin: 0 auto;
+  padding: 2em;
+  font-family: monospace;
+}
+
+#Profile {
+  border-radius: 10px;
+}
+
+.main-container {
+  flex-direction: column;
+  display: flex;
+}
+
+img {
+  border-radius: 8px;
+  max-width: 100%;
+}
+
+.sub-sections-card {
+  box-shadow: 0 rem 0rem #0000;
+  text-align: center;
+  background-image: linear-gradient(#181818, #ff181800);
+  border-radius: 20px;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2em;
+  padding: 4em 2em 1em;
+  transition: box-shadow .2s ease-in-out;
+  display: flex;
+}
+
+.purple-hover:hover, .pink-hover:hover {
+  box-shadow: 0 .3rem .75rem #000000e7;
+}
+
+.introduction-heading {
+  color: #fff;
+  flex: auto;
+  justify-content: center;
+  align-items: center;
+  margin-top: 7vw;
+  margin-bottom: .8em;
+  font-size: 2em;
+  font-weight: 700;
+}
+
+.introduction-text {
+  color: #fff;
+  margin-bottom: 8em;
+  font-size: 1.2em;
+}
+
+.left-section {
+  border-radius: 20px;
+  margin-right: 10vw;
+}
+
+.sub-sections-heading {
+  margin-bottom: .4em;
+  font-size: 2.2em;
+  font-weight: 600;
+}
+
+.sub-sections-subheading {
+  font-size: 1.1em;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+@media (width >= 1024px) {
+  body {
+    max-width: 1200px;
+  }
+
+  .main-container {
+    flex-direction: row;
+    gap: 2em;
+  }
+
+  .sub-sections-row {
+    flex-direction: row;
+    gap: 2em;
+    display: flex;
+  }
+
+  .left-section {
+    width: 30%;
+  }
+
+  .right-section {
+    width: 70%;
+  }
+
+  .one-card {
+    text-align: left;
+    flex-direction: row-reverse;
+  }
+
+  .one-card .image-container {
+    width: 90%;
+  }
+
+  .one-card .sub-sections-text {
+    margin-right: auto;
+  }
+
+  .width-100 {
+    width: 100%;
+  }
+
+  .sub-sections-text {
+    max-width: 50%;
+  }
+
+  .width-50 {
+    width: 50%;
+    max-width: 50%;
+  }
+
+  .multiple-cards .image-container {
+    height: 12em;
+    margin-bottom: 1.2em;
+  }
+
+  .multiple-cards img {
+    height: 100%;
+  }
+
+  .multiple-cards .sub-sections-subheading {
+    height: 2em;
+    margin-bottom: .2em;
+  }
+
+  .multiple-cards {
+    padding: 1.4em 1em;
+  }
+}
+/*# sourceMappingURL=portfolio.d8becb29.css.map */

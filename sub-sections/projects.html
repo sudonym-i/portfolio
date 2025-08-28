@@ -4,148 +4,592 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../css/base-style.css">
     <link rel="stylesheet" href="../css/sub-sections-style.css">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio | Projects</title>
-    
 </head>
-<style>
-    #titleimg{
-        size: 100%;
 
+<style>
+
+
+    * {
+        box-sizing: border-box;
     }
 
+    .project-card {
+        background-color: #1b1a1a;
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        padding: 5em;
+        margin: 4em 6em;
+        border: 1px solid #3c3836;
+        font-family: monospace;
+    }
+
+    .project-card.trading-bot {
+        background-color: #1b1a18;
+        border: 1px solid #3c3630;
+    }
+
+    .project-card.binos {
+        background-color: #181a1b;
+        border: 1px solid #303638;
+    }
+
+    .project-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1.8em;
+        flex-wrap: wrap;
+        gap: 1em;
+        padding-bottom: 1em;
+        border-bottom: 1px solid #3c3836;
+    }
+
+    .project-title {
+        font-size: 2.6em;
+        font-weight: 700;
+        color: #ebdbb2;
+        margin: 0;
+    }
+
+    .live-demo-btn {
+        background: #689d6a;
+        color: #282828;
+        padding: 0.8em 1.6em;
+        text-decoration: none;
+        border-radius: 4px;
+        font-weight: 700;
+        font-size: 1em;
+        transition: all 0.2s ease;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .live-demo-btn:hover {
+        background: #8ec07c;
+        color: #1d2021;
+    }
+
+    .project-description {
+        color: #d5c4a1;
+        font-size: 1.1em;
+        line-height: 1.6;
+        margin-bottom: 2em;
+    }
+
+    .project-goal {
+        background: #1d2021;
+        padding: 1.5em;
+        border-radius: 4px;
+        margin: 1.8em 0;
+        border: 1px solid #fabd2f;
+    }
+
+    .project-goal h3 {
+        color: #fabd2f;
+        margin: 0 0 0.8em 0;
+        font-size: 1.2em;
+        font-weight: 700;
+    }
+
+    .project-goal p {
+        color: #d5c4a1;
+        margin: 0;
+        font-size: 1em;
+        line-height: 1.5;
+        font-style: italic;
+    }
+
+    .tech-stack {
+        margin: 2em 0;
+    }
+
+    .tech-stack h3 {
+        color: white;
+        font-size: 1.5em;
+        margin-bottom: 1em;
+    }
+
+    .tech-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 1em;
+        margin-bottom: 1.5em;
+    }
+
+    .tech-item {
+        background-color: #99803d48;
+        padding: 1em;
+        border-radius: 10px;
+        text-align: center;
+        color: white;
+        font-weight: 600;
+        transition: transform 0.3s ease;
+    }
+
+    .tech-item:hover {
+        transform: scale(1.05);
+    }
+
+    .tech-percentage {
+        font-size: 0.9em;
+        opacity: 0.8;
+        margin-top: 0.5em;
+    }
+
+    .features-section {
+        margin: 2.5em 0;
+    }
+
+    .features-section h3 {
+        color: white;
+        font-size: 1.5em;
+        margin-bottom: 1.2em;
+    }
+
+    .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5em;
+    }
+
+    .feature-card {
+        background-color:#434343;
+        padding: 1.5em;
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .feature-card h4 {
+        color: #78af4c;
+        margin: 0 0 0.8em 0;
+        font-size: 1.2em;
+    }
+
+    .feature-card p {
+        color: #d0d0d0;
+        margin: 0;
+        line-height: 1.6;
+    }
+
+    .project-stats {
+        display: flex;
+        justify-content: space-around;
+        margin: 2em 0;
+        padding: 1.5em;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 10px;
+        flex-wrap: wrap;
+        gap: 1em;
+    }
+
+    .stat-item {
+        text-align: center;
+        color: white;
+    }
+
+    .stat-number {
+        font-size: 1.8em;
+        font-weight: bold;
+        color: #b4c45c;
+        display: block;
+    }
+
+    .stat-label {
+        font-size: 0.9em;
+        opacity: 0.8;
+        margin-top: 0.3em;
+    }
+
+    .project-image-container {
+        text-align: center;
+        margin: 2em 0;
+    }
+
+    .project-image {
+        max-width: 750px;
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    }
+
+    @media (max-width: 768px) {
+        .project-card {
+            margin: 1.5em 1em;
+            padding: 1.5em;
+        }
+
+        .project-header {
+            flex-direction: column;
+            text-align: center;
+            gap: 1.2em;
+            margin-bottom: 1.5em;
+            padding-bottom: 0.8em;
+        }
+
+        .project-title {
+            font-size: 2em;
+        }
+
+        .live-demo-btn {
+            padding: 0.7em 1.4em;
+            font-size: 0.9em;
+        }
+
+        .project-description {
+            font-size: 1em;
+            margin-bottom: 1.5em;
+        }
+
+        .project-goal {
+            margin: 1.2em 0;
+            padding: 1.2em;
+        }
+
+        .tech-stack {
+            margin: 1.5em 0;
+        }
+
+        .tech-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.8em;
+        }
+
+        .features-section {
+            margin: 1.5em 0;
+        }
+
+        .features-grid {
+            grid-template-columns: 1fr;
+            gap: 1em;
+        }
+
+        .feature-card {
+            padding: 1.2em;
+        }
+
+        .project-stats {
+            margin: 1.5em 0;
+            padding: 1.2em;
+        }
+
+        .project-image-container {
+            margin: 1.5em 0;
+        }
+
+        .project-image {
+            max-width: 100%;
+        }
+    }
+
+    @media (max-width: 480px) {
+
+        .project-card {
+            margin: 0em;
+            padding: 1em;
+        }
+
+        .project-title {
+            font-size: 1.8em;
+        }
+
+        .live-demo-btn {
+            width: 85%;
+            text-align: center;
+            padding: 0.8em;
+        }
+
+        .project-description {
+            font-size: 0.95em;
+        }
+
+        .project-goal {
+            margin: 1em 0;
+            padding: 1em;
+        }
+
+        .tech-stack {
+            margin: 1.2em 0;
+        }
+
+        .tech-grid {
+            grid-template-columns: 1fr;
+            gap: 0.6em;
+        }
+
+        .features-section {
+            margin: 1.2em 0;
+        }
+
+        .project-stats {
+            margin: 1.2em 0;
+            padding: 1em;
+        }
+
+        .project-image-container {
+            margin: 1.2em 0;
+        }
+
+        .project-image {
+            max-width: 100%;
+        }
+    }
 </style>
+
 <body>
-    
-    <a href="../index.html" class="go-back-nav">Go back</a>
-    <br>
+    <div class="text-container">
+        <a href="../index.html" class="go-back-nav">Go back</a>
+        
+        <div>
+            <h1 style="justify-self: center;">Featured Projects</h1>
+            
+            <div class="project-card">
+                <div class="project-header">
+                    <h2 class="project-title">Sensei-Bryan</h2>
+                    <a href="https://sensei-bryan.netlify.app/" class="live-demo-btn" target="_blank">Live Demo</a>
+                </div>
+                
+                <div class="project-image-container">
+                    <img src="../images/sensei_bryan.png" alt="Sensei Bryan AI Tutor" class="project-image">
+                </div>
+                
+                <p class="project-description">
+                    Your personal AI tutor designed to encourage active learning and critical thinking, rather than shallow information dumping. 
+                    Sensei-Bryan challenges you to think deeply about subjects instead of providing passive answers.
+                </p>
 
+                <div class="project-goal">
+                    <h3>Main Goal</h3>
+                    <p>Makes you think rather than answer everything and turning your brain off</p>
+                </div>
 
-    <h1><span >Web Crawler</span></h1>
-    <img id="titleimg" src="./images/crawler.png">
-    <br>
- 
-        <span class="sub-sections-text" style="font-size: larger;">
-            <h2>Overview</h2>
-            This C++ project implements a web crawler designed to navigate through a series of web pages, following a chain of links specified in a crawlchain.txt file. The crawler efficiently collects specific data from each page by identifying and extracting content between predefined start and stop points. The start and stop points are denoted by HTML tags such as  &lt;a&gt; and  &lt;/a&gt;, allowing the crawler to scrape relevant data for analysis or further processing.
-<br>
-<h2>Key Features</h2>
-Crawl Chain Specification:
+                <div class="tech-stack">
+                    <h3>Tech Stack</h3>
+                    <div class="tech-grid">
+                        <div class="tech-item">
+                            <div>JavaScript</div>
+                            <div class="tech-percentage">43.2%</div>
+                        </div>
+                        <div class="tech-item">
+                            <div>CSS</div>
+                            <div class="tech-percentage">37.5%</div>
+                        </div>
+                        <div class="tech-item">
+                            <div>TypeScript</div>
+                            <div class="tech-percentage">11.3%</div>
+                        </div>
+                        <div class="tech-item">
+                            <div>HTML</div>
+                            <div class="tech-percentage">8.0%</div>
+                        </div>
+                    </div>
+                </div>
 
-The project reads a crawlchain.txt file, which contains a list of URLs to visit and tags (or keywords) to look for. This crawl chain guides the crawler through different web pages, allowing for controlled navigation. The crawler follows the links sequentially, ensuring that each URL is visited in the specified order.
+                <div class="features-section">
+                    <h3>✨ Key Features</h3>
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <h4>Teaching Mode</h4>
+                            <p>Adaptive tutoring that asks about your subject and level, provides examples, and gives practice questions with detailed feedback.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h4>Interactive Flashcards</h4>
+                            <p>Smart flashcard system that adapts to your learning pace and focuses on areas that need improvement.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h4>Practice Tests</h4>
+                            <p>Comprehensive testing feature that evaluates your understanding and provides detailed performance analytics.</p>
+                        </div>
+                        
+                    </div>
+                </div>
 
-<h2>Data Collection Between Tags:</h2>
+                <div class="project-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">100%</span>
+                        <div class="stat-label">Open Source</div>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">4</span>
+                        <div class="stat-label">Languages</div>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">Live</span>
+                        <div class="stat-label">Deployed</div>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">OpenRouter</span>
+                        <div class="stat-label">Powered</div>
+                    </div>
+                </div>
+            </div>
 
-The core functionality of the crawler revolves around identifying specific HTML tags, typically &lt;a&gt; (anchor tags) and &lt;/a&gt; (closing anchor tags), to extract relevant content. This allows for a targeted approach to data collection, such as gathering links or any other content contained within specific tags.
+            <div class="project-card trading-bot">
+                <div class="project-header">
+                    <h2 class="project-title">ML Trading Bot</h2>
+                    <a href="https://github.com/sudonym-i/ML-trading-bot" class="live-demo-btn" target="_blank">View Code</a>
+                </div>
+                
+                <div class="project-image-container">
+                    <img src="../images/trading.png" alt="ML Trading Bot" class="project-image">
+                </div>
+                
+                <p class="project-description">
+                    An automated trading bot that uses deep learning to predict future stock prices and make trading decisions. 
+                    Built with PyTorch and featuring a multi-layer GRU neural network for time series prediction.
+                </p>
 
-The crawler extracts the content between the start and stop tags and stores the results for further processing.
+                <div class="project-goal">
+                    <h3>Main Goal</h3>
+                    <p>Create an intelligent trading system that can analyze historical price data and make profitable trading decisions automatically</p>
+                </div>
 
-<h2>HTML Parsing:</h2>
+                <div class="tech-stack">
+                    <h3>Tech Stack</h3>
+                    <div class="tech-grid">
+                        <div class="tech-item">
+                            <div>Python</div>
+                            <div class="tech-percentage">85%</div>
+                        </div>
+                        <div class="tech-item">
+                            <div>PyTorch</div>
+                            <div class="tech-percentage">ML Core</div>
+                        </div>
+                        <div class="tech-item">
+                            <div>yfinance</div>
+                            <div class="tech-percentage">Data Source</div>
+                        </div>
+                        <div class="tech-item">
+                            <div>JSON</div>
+                            <div class="tech-percentage">Config</div>
+                        </div>
+                    </div>
+                </div>
 
-The crawler employs basic HTML parsing techniques to traverse the structure of each web page. It identifies the start and stop points, ensuring that only the relevant sections of the HTML document are captured.
+                <div class="features-section">
+                    <h3> Key Features</h3>
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <h4>GRU Neural Network</h4>
+                            <p>3-layer Gated Recurrent Unit network with 128 hidden units each, designed for time series prediction with SiLU activation.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h4>Technical Indicators</h4>
+                            <p>Incorporates SMA, RSI, and MACD indicators for richer feature representation and better prediction accuracy.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h4>Automated Trading</h4>
+                            <p>Makes buy/sell decisions based on price predictions with configurable parameters for different trading strategies.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h4>Yahoo Finance Integration</h4>
+                            <p>Downloads real-time historical data for any stock ticker with configurable date ranges and intervals.</p>
+                        </div>
+                    </div>
+                </div>
 
-This parsing method is simple yet effective for specific scraping tasks and provides a foundation for more complex data extraction.
+                <div class="project-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">100%</span>
+                        <div class="stat-label">Open Source</div>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">3</span>
+                        <div class="stat-label">GRU Layers</div>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">MSE</span>
+                        <div class="stat-label">Loss Function</div>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">GPL-3.0</span>
+                        <div class="stat-label">Licensed</div>
+                    </div>
+                </div>
+            </div>
 
-<h2>Error Handling and Robustness:</h2>
+            <div class="project-card binos">
+                <div class="project-header">
+                    <h2 class="project-title">Binos-4-Everyone</h2>
+                    <a href="https://github.com/sudonym-i/Binos-4-Everyone" class="live-demo-btn" target="_blank">View Code</a>
+                </div>
+                
+                <p class="project-description">
+                    An accessible AI text detection tool designed to democratize the ability to detect AI-generated content. 
+                    Built on the Binoculars research, this project aims to make AI detection as accessible as AI text generation itself.
+                </p>
 
-The project is designed with error handling mechanisms to gracefully handle issues such as broken links, invalid URLs, or missing tags. If the crawler encounters a problem, it logs the error and continues processing the next URL in the crawl chain.
+                <div class="project-goal">
+                    <h3>Main Goal</h3>
+                    <p>Create a web application that allows anyone to detect AI-generated text without technical knowledge, expensive hardware, or payment barriers</p>
+                </div>
 
-<h2>Extensibility:</h2>
+                <div class="tech-stack">
+                    <h3>Tech Stack</h3>
+                    <div class="tech-grid">
+                        <div class="tech-item">
+                            <div>Python</div>
+                            <div class="tech-percentage">Core</div>
+                        </div>
+                        <div class="tech-item">
+                            <div>HTTP Routing</div>
+                            <div class="tech-percentage">Web API</div>
+                        </div>
+                        <div class="tech-item">
+                            <div>Model Caching</div>
+                            <div class="tech-percentage">Performance</div>
+                        </div>
+                        <div class="tech-item">
+                            <div>BSD-3</div>
+                            <div class="tech-percentage">Licensed</div>
+                        </div>
+                    </div>
+                </div>
 
-The C++ web crawler is modular, allowing for easy expansion and customization. For example, users can add more tag-based data extraction methods, implement deeper link-following mechanisms, or extend the crawler to handle different types of data (e.g., images, metadata, etc.).
+                <div class="features-section">
+                    <h3>🔍 Key Features</h3>
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <h4>Zero-Barrier Access</h4>
+                            <p>No downloads, installations, or technical setup required. Simple web interface for instant AI text detection.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h4>Binoculars Research Based</h4>
+                            <p>Built on cutting-edge zero-shot detection research for accurate identification of machine-generated text.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h4>Privacy-Focused</h4>
+                            <p>Minimal data retention and secure processing to protect user privacy while providing detection services.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h4>Optimized Performance</h4>
+                            <p>Models optimized for efficiency to balance accuracy with computational requirements for web deployment.</p>
+                        </div>
+                    </div>
+                </div>
 
-Performance Considerations:</h2>
-
-C++ is chosen for its high performance and control over system resources, which is crucial for efficiently crawling multiple web pages. The project optimizes both memory usage and speed, making it capable of handling large-scale data collection tasks.
-
-<h2>How It Works</h2>
-<span style="text-indent: 20px;">
-<h2 style="text-decoration: underline;">Input:</h2>
-
-The user provides a crawlchain.txt file containing a sequence of URLs and tags/keywords. These URLs specify the order in which the crawler should visit different web pages. There is a little bit of syntax to it, but not much.
-
-<h2 style="text-decoration: underline;">Execution:</h2>
-
-The program initializes by reading the crawlchain.txt file, then begins processing each URL one by one.
-
-For each URL, the crawler fetches the HTML content of the page.
-
-It then scans the HTML content for the specified start and stop tags (such as <a> and </a>) and extracts the content between them.
-
-<h2 style="text-decoration: underline;">Data Output:</h2> 
-
-The extracted data is stored, either in memory or written to an output file, such as a CSV or text file, for further analysis or reporting.
-</span></span>
-<br><br><br>
-    <h1><span >SUDOKU</span></h1>
-    <img id="titleimg" src="./images/sudoku.png">
-        <span class="sub-sections-text" style="font-size: larger;"> 
-            <h2> Overview </h2>
-        This was one of my first projects. Building a Sudoku game from scratch using just HTML and JavaScript was an incredibly rewarding and challenging experience. I started with the fundamental goal of creating a clean, interactive game that could both generate random puzzles and allow users to input their own answers. This project not only tested my technical skills but also helped me improve my problem-solving abilities and attention to detail.
-<br> <br>
-<h2> HTML Structure </h2>
-The first step was designing the game layout using HTML. I created a 9x9 grid using a combination of `<div>` elements, where each cell would hold either a number or be left empty for user input. Each cell was individually clickable to allow for interaction, and I used HTML’s `input` fields to capture the numbers users entered. This allowed me to create the board structure and set the foundation for the game mechanics.
-<br> <br>
-
-<h2> JavaScript Logic </h2>
-The most intricate part of the project was implementing the game logic with JavaScript. I needed to:
-<br> <br>
-1. **Generate Random Sudoku Puzzles**: I created a random puzzle generator using an algorithm that would ensure the puzzle had a unique solution. This was crucial to ensure that the puzzles were solvable and provided a challenge to players.
-  <br> <br>
-2. **User Input Validation**: I built a validation function that would check whether the user’s input was correct based on Sudoku rules (no repeating numbers in any row, column, or 3x3 subgrid). This was one of the more complex parts of the project since it required checking all three constraints for each number entered.
-<br> <br>
-3. **Check Puzzle Solving**: I also implemented a function to check if the user had solved the puzzle correctly. If all constraints were met and the board was filled, the game would notify the user of their success.
-<br> <br>
-4. **Backtracking Algorithm**: For solving the puzzle, I implemented a backtracking algorithm. While this was an optional feature, it added significant complexity to the project and allowed the game to not only generate random puzzles but also solve any given Sudoku grid.
-<br> <br>
-<h2> Challenges </h2>
-One of the biggest challenges I faced was ensuring the user’s input was validated correctly and efficiently. For example, handling edge cases like entering invalid characters or not filling in all the empty cells before checking the solution required careful logic. Additionally, managing the state of the board while providing real-time feedback (like highlighting incorrect numbers) was a tricky task, but one that greatly improved the user experience.
-<br> <br>
-<h2> Final Thoughts </h2>
-The project gave me an immense sense of accomplishment, and I learned a great deal in the process, especially about using JavaScript for game logic and managing dynamic content with HTML and CSS. While the game itself is relatively simple, building it entirely from scratch gave me a deep understanding of how games are structured and how to balance both the user interface and logic to create a functional and enjoyable experience.
-        </span>
-
-    <br><br><br>
-    <h1><span >Cypher-space</span></h1>
-    <img id="titleimg" src="./images/encryption.png">
-    <br> <br>
- 
-        <span class="sub-sections-text" style="font-size: larger;">
-            <h2>My Experience Creating an iterative Encryption Algorithm from scratch in Python<br></h2>
-            In my recent project, I set out to create an encryption algorithm from scratch using Python. My main goal was to develop an encryption method that could transform text in a unique, non-repetitive way using an iterative series. The concept behind the algorithm was to apply a series of transformations to each character in a message, where each iteration would change the pattern of encryption for the next character, ensuring no repetitions in the encryption.
-            <br><br>
-            <h2>Designing the Algorithm<br></h2>
-            I began by brainstorming how I wanted to structure the encryption process. My main idea was to avoid the predictability found in traditional encryption methods like Caesar cipher, which shifts characters by a fixed number. I wanted my algorithm to use an iterative approach that altered the encryption for each character based on previous ones.
-            <br>
-            The design concept involved using an iterative series of operations. For example, each character in the string would be processed using a combination of operations: shifting characters by varying amounts, changing their positions, and applying simple mathematical transformations like addition or subtraction of numbers derived from the character’s index. Each of these transformations would depend on a previously computed value, creating a cascading effect where the encryption evolves as the algorithm progresses.
-            <br><br>
-            <h2>Coding the Algorithm<br></h2>
-            Once I had the general idea, I began coding the algorithm in Python. The basic steps were:
-            <br>
-            Initial Setup: I decided that the algorithm should start with a secret key (a number or string) that would influence the transformation of the first character. This key would then be iterated on for each subsequent character, ensuring no repetitive transformations across the text.
-            <br>
-            Iterative Transformation: For each character in the input string, I created a function that would apply the transformation based on the iteration number. For instance:
-            <br><br>
-            <h2>The first character would have a specific shift based on the key.<br></h2>
-            The second character’s transformation would depend on the result of the first one, and so on. This allowed me to create a series of transformations that were tightly coupled to the evolving pattern.
-            Character Encoding: I used Python's built-in ord() and chr() functions to convert characters to their ASCII values, perform the encryption calculations, and then convert them back into characters. This enabled me to easily manipulate the characters and apply mathematical transformations.
-            <br><br>
-            Decryption: I also built in a method for decryption, which would reverse the iterative transformations by applying the inverse of each operation used in the encryption.
-            <br>
-            <h2>Challenges Faced<br></h2>
-            One of the challenges I encountered was ensuring that the series of transformations was both secure enough to prevent easy decryption, while still being efficient. I had to carefully balance the complexity of the transformations and the iterative nature of the algorithm so that the encrypted message wouldn’t become too difficult to manage.
-            <br>
-            I also had to ensure that the key used in the algorithm wasn’t too simple, as that would defeat the purpose of creating a non-repetitive encryption scheme. I ended up using a combination of a numeric key and the length of the input string to generate a series of shifts for each character.
-            <br>
-            Another challenge was testing the algorithm. Ensuring that the iterative transformations worked as expected for different input strings took a fair amount of trial and error. Some edge cases required additional checks to avoid errors such as attempting to shift a character beyond the ASCII range.
-            <br><br>
-            <h2>Final Outcome<br></h2>
-            In the end, I was able to create a functional encryption algorithm that was both simple and unique. The algorithm successfully encrypts text using an iterative series of transformations that ensures no repetitive patterns in the encryption process. The result is an encrypted string that appears random and secure, yet can be decrypted with the correct key.
-            <br>
-            I was pleased with how well the algorithm worked, especially given the fact that it was designed to be both easy to implement and somewhat effective at hiding the original message. While this encryption method is certainly not suitable for high-security applications, it provided valuable insights into how iterative transformations can create non-repetitive encryption schemes.
-
-            </span>
-
+                <div class="project-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">WIP</span>
+                        <div class="stat-label">Status</div>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">5</span>
+                        <div class="stat-label">Commits Ahead</div>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">Free</span>
+                        <div class="stat-label">Access Model</div>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">Research</span>
+                        <div class="stat-label">Based</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

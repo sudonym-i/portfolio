@@ -13,7 +13,11 @@ body {
 
 .main-container {
     display: flex;
-    flex-direction:column;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    min-height: 100vh;
+    margin: 0 auto;
 }
 
 img {
@@ -23,7 +27,7 @@ img {
 
 
 .sub-sections-card {
-    background-image: linear-gradient(to bottom,#181818,#ff181800);
+    background-image: linear-gradient(to bottom,#181818,#181818);
     display: flex;
     flex-direction:column;
     align-items:center;
@@ -53,19 +57,18 @@ img {
     color: white;
     font-size: 2em;
     font-weight: 700;
-    margin-bottom: 0.8em;
-    margin-top: 7vw;
+    margin-bottom: 1.2em;
 }
 
 .introduction-text {
     color: white;
     font-size: 1.2em;
-    margin-bottom: 8em;
+
 }
 
 .left-section {
     border-radius: 20px;
-    margin-right: 10vw;
+    margin-right: 2vw;
 }
 
 .sub-sections-heading {
@@ -87,11 +90,6 @@ a {
 
     body {
         max-width: 1200px;
-    }
-
-    .main-container {
-        flex-direction:row;
-        gap: 2em;
     }
 
     .sub-sections-row {

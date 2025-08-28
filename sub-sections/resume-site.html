@@ -10,17 +10,243 @@
     
 </head>
 <style>
-    #resume{
-        size: 100%;
-        margin-top: 2em;
-
+    .resume-container {
+        border-radius: 7px;
+        max-width: 800px;
+        margin: 2em auto;
+        padding: 40px;
+        background: white;
+        box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        font-family: "Times New Roman", serif;
+        line-height: 1.6;
+    }
+    
+    .resume-header {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    
+    .resume-name {
+        font-size: 2.5em;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+    
+    .resume-title {
+        font-size: 1.2em;
+        font-weight: bold;
+        margin-bottom: 15px;
+    }
+    
+    .resume-contact {
+        margin-bottom: 20px;
+        line-height: 1.4;
+    }
+    
+    .resume-section {
+        margin-bottom: 25px;
+    }
+    
+    .resume-section-title {
+        font-size: 1.1em;
+        font-weight: bold;
+        text-transform: uppercase;
+        border-bottom: 1px solid #000;
+        padding-bottom: 5px;
+        margin-bottom: 15px;
+    }
+    
+    .resume-item {
+        margin-bottom: 15px;
+    }
+    
+    .resume-subheading {
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+    
+    .resume-details {
+        font-style: italic;
+        font-size: 0.9em;
+        margin-bottom: 8px;
+    }
+    
+    .resume-list {
+        margin-left: 20px;
+        margin-bottom: 10px;
+    }
+    
+    .resume-list li {
+        margin-bottom: 3px;
+        font-size: 0.95em;
+    }
+    
+    .project-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+    
+    .project-tech {
+        font-style: italic;
+        font-size: 0.9em;
+    }
+    
+    a {
+        color: #00008B;
+        text-decoration: none;
+    }
+    
+    a:hover {
+        text-decoration: underline;
     }
 
 </style>
 <body>
     
-    <a href="../index.html" class="go-back-nav">Go back</a>
-    <br>
-    <img id="resume" src="./images/resumeIMG.jpg">
+    <div class="text-container">
+        <a href="../index.html" class="go-back-nav">Go back</a>
+        
+        <div class="resume-container">
+        <div class="resume-header">
+            <div class="resume-name">Isaac Klein</div>
+            <div class="resume-title">Computer Science Student | Mount Royal University</div>
+            <div class="resume-contact">
+                Email: isickln08@gmail.com | Phone: 587-832-3956 | 
+                GitHub: <a href="https://github.com/sudonym-i">github.com/sudonym-i</a> | 
+                LinkedIn: To-Add
+            </div>
+        </div>
+
+        <div class="resume-section">
+            <div class="resume-section-title">Education</div>
+            <div class="resume-item">
+                <div class="resume-subheading">Bachelor of Computer Science | Mount Royal University | Calgary, AB</div>
+                <div class="resume-details">Expected Graduation: 2028 | <strong>GPA: 4.0/4.0</strong> | 2x Dean's Honour Roll</div>
+                <div><strong>Relevant Coursework:</strong> Python, C++, Calculus, Linear Algebra</div>
+            </div>
+        </div>
+
+        <div class="resume-section">
+            <div class="resume-section-title">Technical Skills</div>
+            <ul class="resume-list">
+                <li><strong>Programming Languages:</strong> Python, JavaScript, C++, HTML/CSS</li>
+                <li><strong>AI/ML Technologies:</strong> PyTorch, TensorBoard, OpenAI API, Neural Networks</li>
+                <li><strong>Web Development:</strong> React.js, Node.js, RESTful APIs, Responsive Design, HTTP routing</li>
+                <li><strong>Development Tools:</strong> Git/GitHub, Linux, Google Apps Script, netlify</li>
+                <li><strong>APIs:</strong> PRAW (Reddit API), Google Sheets API</li>
+                <li><strong>Specializations:</strong> Machine Learning, Full-Stack Development, Systems Programming, Web Scraping</li>
+            </ul>
+        </div>
+
+        <div class="resume-section">
+            <div class="resume-section-title">Experience</div>
+            
+            <div class="resume-item">
+                <div class="resume-subheading">Calculus Tutor | Mount Royal University | Calgary, AB | [2025]</div>
+                <ul class="resume-list">
+                    <li>Classroom tutor for Calculus I, in the university's PLP program</li>
+                    <li>Helped student understand the mathematical concepts associated with calculus</li>
+                    <li>Effectively communicated ideas and practices in a way that helped the students in their academic performance</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="resume-section">
+            <div class="resume-section-title">Projects</div>
+            
+            <div class="resume-item">
+                <div class="project-header">
+                    <span>Sensei Bryan - AI Tutor Platform</span>
+                    <a href="https://sensei-bryan.netlify.app/">Live Demo</a>
+                </div>
+                <div class="project-tech">JavaScript, React.js, OpenAI API</div>
+                <ul class="resume-list">
+                    <li>Built a personalized AI tutoring system focused on active learning and critical thinking rather than passive information consumption</li>
+                    <li>Designed responsive web interface using React.js with emphasis on user engagement and educational effectiveness</li>
+                    <li>Deployed and maintained live application serving educational content to users and landing page</li>
+                </ul>
+            </div>
+
+            <div class="resume-item">
+                <div class="project-header">
+                    <span>Machine-Learning Trading Bot</span>
+                    <span class="project-tech">Python, Time Series Analysis | Financial Technology</span>
+                </div>
+                <ul class="resume-list">
+                    <li>Created automated trading system using machine learning for stock price prediction and decision making</li>
+                    <li>Implemented time series regression model for analyzing market trends and generating trading signals</li>
+                    <li>Developed risk management features and backtesting capabilities</li>
+                </ul>
+            </div>
+
+            <div class="resume-item">
+                <div class="project-header">
+                    <span>LLM Text Detection Tool (Binoculars)</span>
+                    <span class="project-tech">Python, Machine Learning | Fork Contribution</span>
+                </div>
+                <ul class="resume-list">
+                    <li>Contributed to zero-shot detection system for identifying LLM-generated text using advanced statistical methods</li>
+                    <li>Implemented user-friendly interface for everyday users to detect AI-generated content</li>
+                    <li>Utilized research from ICML 2024 paper to create practical detection tool</li>
+                </ul>
+            </div>
+
+            <div class="resume-item">
+                <div class="project-header">
+                    <span>AI Reddit Bot</span>
+                    <span class="project-tech">Python, PRAW, LLMs</span>
+                </div>
+                <ul class="resume-list">
+                    <li>Developed an intelligent bot that monitors Reddit for specific keywords and generates contextually appropriate responses using Large Language Models</li>
+                    <li>Implemented user-friendly web interface allowing users to review, edit, or delete AI-generated responses before posting. Built using React.js</li>
+                    <li>Integrated PRAW API for seamless Reddit interaction and content management</li>
+                </ul>
+            </div>
+
+            <div class="resume-item">
+                <div class="project-header">
+                    <span>Neural Network Digit Recognition</span>
+                    <span class="project-tech">Python, PyTorch, TensorBoard | Machine Learning</span>
+                </div>
+                <ul class="resume-list">
+                    <li>Developed convolutional neural network achieving high accuracy on MNIST handwritten digit dataset</li>
+                    <li>Implemented comprehensive data visualization using TensorBoard for training metrics and model performance analysis</li>
+                    <li>Optimized model architecture and hyperparameters for improved recognition accuracy</li>
+                </ul>
+            </div>
+
+            <div class="resume-item">
+                <div class="project-header">
+                    <span>Web Scraper with libcurl</span>
+                    <span class="project-tech">C++, Makefile | Systems Programming</span>
+                </div>
+                <ul class="resume-list">
+                    <li>Built high-performance web scraping tool using libcurl library for data extraction</li>
+                    <li>Implemented configurable scraping chains with customizable start/stop tag parsing</li>
+                    <li>Developed robust error handling and data processing capabilities</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="resume-section">
+            <div class="resume-section-title">Achievements & Highlights</div>
+            <ul class="resume-list">
+                <li><strong>Academic Performance:</strong> Maintained 4.0 GPA in Computer Science program, A+ in all computer science courses.</li>
+                <li><strong>Diverse Technical Portfolio:</strong> 12+ public repositories showcasing full-stack development skills</li>
+                <li><strong>Open Source Contribution:</strong> Active contributor to machine learning research implementation</li>
+                <li><strong>Production Deployment:</strong> Successfully deployed and maintained live web applications</li>
+                <li><strong>Cross-Platform Development:</strong> Experience with web, mobile, and desktop application development</li>
+            </ul>
+        </div>
+
+        <div class="resume-section">
+            <div class="resume-section-title">Interests</div>
+            <div>Machine Learning, Artificial Intelligence, Web Development, Open Source Software, Educational Technology, Financial Technology, Mobile App Development</div>
+        </div>
+        </div>
+    </div>
 </body>
 </html>

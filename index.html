@@ -38,19 +38,81 @@
         }
 
         .introduction {
-            border-radius: 12px;
-            padding: 1.2em 5.5em;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-            border: 1px solid rgba(60, 56, 54, 0.6);
-            backdrop-filter: blur(3px);
+            border-radius: 8px;
+            padding: 2em 3em;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             width: fit-content;
+            max-width: 200px;
+            margin-top: 10em;
+        }
+
+        @media (max-width: 1023px) {
+            .introduction {
+                max-width: 350px;
+                width: 90%;
+                margin-top: 2em;
+                margin-bottom: 3em;
+                padding: 2.5em 2em;
+            }
+            
+            #Profile {
+                width: 150px;
+                height: 150px;
+            }
+            
+            .intro-name {
+                font-size: 2em;
+            }
+            
+            .introduction-text {
+                font-size: 1.1em;
+            }
         }
 
         .left-section {
             display: flex;
             align-items: center;
             justify-content: flex-start;
-            min-height: 100vh;
+            max-height: 50vh;
+        }
+
+        .intro-name {
+            font-size: 1.8em;
+            font-weight: 500;
+            margin-top: 1em;
+            color: white;
+        }
+
+        .introduction-heading {
+            text-align: center;
+            margin-bottom: 1.5em;
+        }
+
+        #Profile {
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 4%;
+        }
+
+        .introduction-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5em;
+            justify-content: center;
+            margin-top: 1.5em;
+        }
+
+        .skill-tag {
+            background: rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.9);
+            padding: 0.4em 0.8em;
+            border-radius: 12px;
+            font-size: 0.8em;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(5px);
         }
 
     </style>
@@ -62,14 +124,16 @@
         <div class="left-section">
             <div class="introduction">
                 <div class="introduction-heading"> 
-                    <img id="Profile" src="./images/nextprofile.png" alt="Profile"> <br> <br>
-                   <hr style="margin-top: -20px;">
-                    Hi! My name is Isaac.
+                    <img id="Profile" src="./images/nextprofile.png" alt="Profile">
+                    <div class="intro-name">Isaac K.</div>
                 </div>
                 <div class="introduction-text">
-                    I have a passion for coding
-                    and enjoy the thrill of a challenge.<br><br>
-                    Currently a Computer-Science undergraduate.
+                    Computer Science undergraduate with a passion for coding and problem-solving.
+                </div>
+                <div class="introduction-skills">
+                    <span class="skill-tag">C++</span>
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">React</span>
                 </div>
             </div>
         </div>

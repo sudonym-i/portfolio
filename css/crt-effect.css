@@ -1,0 +1,52 @@
+/* CRT Monitor Effect Styles */
+.crt-overlay {
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999;
+    mix-blend-mode: lighten;
+    opacity: 0.25;
+    background:
+        repeating-linear-gradient(
+            to bottom,
+            rgba(255,255,255,0.06) 0px,
+            rgba(255, 197, 164, 0.4) 1px,
+            transparent 2px,
+            transparent 4px
+        );
+    /* Subtle vignette */
+    box-shadow: 0 0 80px 20px rgba(0,0,0,0.5) inset;
+    /* Slight blur for glow */
+
+}
+
+/* Chromatic Aberration Utility Class */
+
+.chromatic-aberration-strong, .chromatic-aberration {
+    /* Strong chromatic aberration for headers/titles */
+    text-shadow:
+        -1.5px 0 1px #ff0000,
+        1.5px 0 1px #00ffea,
+        0 1.5px 1px #00ff00,
+        0 -1.5px 1px #0000ff;
+}
+
+.chromatic-aberration-light {
+    /* Lighter chromatic aberration for paragraph text */
+    text-shadow:
+        -0.75px 0 0.75px #ff000055,
+        0.75px 0 0.75px #00ffea55,
+        0 0.75px 0.75px #00ff0055;
+}
+
+.chromatic-aberration-border {
+    /* Chromatic aberration: thin, offset RGB shadows */
+    box-shadow:
+        1px 0 0 1px #ff000015,
+        -1px 0 0 1px #ff00ff00,
+        0 1px 0 1px #00ff0000,
+        0 -1px 0 1px #ff00ff15;
+}
